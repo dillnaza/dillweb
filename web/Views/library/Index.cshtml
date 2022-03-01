@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<form align="center">
+    <div>
+        <h2>
+            Список книг 1 категории:
+        </h2>
+        <div>
+            <div style="padding-left: 65%">
+                <button class="btn btn-cta-secondary" asp-controller="library" asp-action="Create">Добавить новую книгу</button>
+            </div>
+            <h4 style="color: #122b40; padding-right: 65%">
+                <img src="/css/noun-sort-1590833.png" class="images" alt="Сортировать">
+                Количество книг: <?php include 'category.php' ?>
+            </h4>
+            @foreach (var obj in @Model)
+            {
+                <div class="box" align="center">
+                    <h3> @obj.Name</h3>
+                    <img style="float: right" class="images" src="/css/noun-star-1058635.png" alt="Избранное">
+                    <img style="float: right" class="images" src="/css/noun-delete-4602521.png" alt="Удалить">
+                    <img style="float: right" class="images" src="/css/noun-edit-1644623.png" alt="Изменить">
+                    <h6>@obj.Author</h6>
+                </div>
+                <br>
+            }
+        </div>
+    </div>
+</form>
+
+

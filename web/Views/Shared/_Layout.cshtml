@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/web.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav role="navigation">
+                <div class="navbar-collapse collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><h2>Библиотека "GoodReader"</h2></li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            </nav>
+            
+        </div>
+
+        <form id="promo" class="promo section offset-header" method="get">
+            <div class="container text-center">
+                <div class="btn">
+                    <button class="btn btn-cta-secondary"  asp-controller="Library" asp-action="Index">1-категория</button>
+                    <button class="btn btn-cta-primary"  asp-controller="Library" asp-action="Index">2-категория</button>
+                    <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">3-категория</button>
+                    <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index">4-категория</button>
+                    <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">5-категория</button>
+                </div>
+            </div>
+        </form>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
