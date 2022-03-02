@@ -19,11 +19,6 @@ namespace web.Controllers
             return View(bookList);
         }
 
-        public IActionResult Index(int CountBook)
-        {
-            return View(CountBook);
-        }
-
         //get
         public IActionResult Create()
         {
