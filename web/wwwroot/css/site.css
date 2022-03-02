@@ -58,8 +58,6 @@ a.btn-cta-secondary,
         color: #fff !important;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
-        -ms-border-radius: 4px;
-        -o-border-radius: 4px;
         border-radius: 4px;
         -moz-background-clip: padding;
         -webkit-background-clip: padding-box;
@@ -168,12 +166,4 @@ a.btn-cta-secondary,
     border: 1px solid #074f66;
     border-radius: 7px;
     width: 300px;
-}
-
-.search {
-    float: right;
-    width: 30%;
-    background: #F5F4F4;
-    border-radius: 5px;
-    margin: 16px 12px 0px 0px;
 }

@@ -6,40 +6,39 @@
     <title>@ViewData["Title"] - web</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/bootswatchTheme.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
-    <header>
+    <header id="header" class="header">
         <div class="container">
             <nav role="navigation">
-                <div class="navbar-collapse collapse" id="navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li><h2>Библиотека "GoodReader"</h2></li>
                     </ul>
-                </div>
-                <form class="d-flex">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
             </nav>
-            
         </div>
-
-        <form id="promo" class="promo section offset-header" method="get">
-            <div class="container text-center">
-                <div class="btn">
-                    <button class="btn btn-cta-secondary"  asp-controller="Library" asp-action="Index">1-категория</button>
-                    <button class="btn btn-cta-primary"  asp-controller="Library" asp-action="Index">2-категория</button>
-                    <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">3-категория</button>
-                    <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index">4-категория</button>
-                    <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">5-категория</button>
-                </div>
-            </div>
-        </form>
     </header>
 
+    <script>
+    </script>
+    <form id="promo" class="promo section offset-header" method="get">
+        <div class="container text-center">
+            <div class="btn">
+                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">1-категория</button>
+                <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index">2-категория</button>
+                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">3-категория</button>
+                <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index">4-категория</button>
+                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">5-категория</button>
+            </div>
+        </div>
+    </form>
+
     <div class="container">
+        <partial name="Tempdata"/>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

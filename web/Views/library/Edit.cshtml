@@ -1,12 +1,12 @@
 ﻿@model Book
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Edit";
 }
 
-<form method="post" asp-action="Create">
+<form method="post" asp-action="Edit">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
-            <h2>Добавить книгу</h2>
+            <h2>Изменить данные о книге</h2>
             <hr />
         </div>
 
@@ -28,7 +28,7 @@
             <span asp-validation-for="Category" class="text-danger"></span>
         </div>
 
-        <button type="submit" class="btn btn-cta-primary">Добавить</button>
+        <button type="submit" class="btn btn-cta-primary">Изменить</button>
         <a class="btn btn-cta-secondary" asp-controller="library" asp-action="Index">Отмена</a>
     </div>
 </form>

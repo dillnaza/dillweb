@@ -1,0 +1,35 @@
+﻿@model Book
+
+<form method="post" asp-action="Delete">
+	<input asp-for="Count" hidden />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 >Удалить данные о книге</h2>
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Name"></label>
+			<input asp-for="Name" disabled class="form-control" />
+		</div>
+
+		<div class="mb-3">
+			<label asp-for="Author"></label>
+			<input asp-for="Author" disabled class="form-control" />
+		</div>
+
+		<div class="mb-3">
+            <label asp-for="Category"></label>
+            <input asp-for="Category" disabled class="form-control" />
+        </div>
+
+		<button type="submit" class="btn btn-danger">Удалить</button>
+		<a asp-controller="library" asp-action="Index" class="btn btn-secondary">Отмена</a>
+	</div>
+</form>
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
+
