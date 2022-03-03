@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Dynamic;
 using web.db;
 using web.Models;
 
@@ -13,10 +14,25 @@ namespace web.Controllers
             _db = db;
         }
 
+        private IEnumerable<Book> GetBook()
+        {
+            IEnumerable<Book> books = _db.Book;
+            return books;
+        }
+
+        private CountBook GetCount()
+        {
+            CountBook count = new();
+            CountBook catcount = count.GetCountName();
+            return catcount;
+        }
+
         public IActionResult Index()
         {
-            IEnumerable<Book> bookList = _db.Book;
-            return View(bookList);
+            dynamic mymodel = new ExpandoObject();
+            mymodel.books = GetBook();
+            mymodel.count = GetCount();
+            return View(mymodel);
         }
 
         //get

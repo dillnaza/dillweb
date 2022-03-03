@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Book>
+﻿@model dynamic
 @{
     ViewData["Title"] = "Index";
 }
@@ -14,11 +14,11 @@
 
             <h4 style="color: #122b40; padding-right: 65%">
                 <img src="/css/noun-sort-1590833.png" class="images" alt="Сортировать">
-                Количество книг: 
+                Количество книг: @Model.count.CatCount
 
             </h4>
 
-            @foreach (var obj in @Model)
+            @foreach (var obj in @Model.books)
             {
                 <div class="box">
                     <h3> @obj.Name</h3>
