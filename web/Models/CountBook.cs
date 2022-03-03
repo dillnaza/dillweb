@@ -1,11 +1,11 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace web.Models
 {
-    public class Countbook
+    public class CountBook
     {
         public string CatCount { get; set; }
-        public Countbook GetCountName()
+        public CountBook GetCountName()
         {
             string connectionString = "Data Source = DESKTOP-HQF96MO\\SQLEXPRESS; Initial Catalog = master; Integrated Security=True; TrustServerCertificate=True";
             SqlConnection sqlConnection = new(connectionString);
@@ -19,7 +19,7 @@ namespace web.Models
 
             SqlDataReader reader = cmd.ExecuteReader();
 
-            Countbook count = new();
+            CountBook count = new();
 
             if (reader.Read())
             {
