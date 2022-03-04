@@ -4,7 +4,7 @@ namespace web.Models
 {
     public class CountBook
     {
-        public int Category { get; set; }
+        public int Category { get; set; } =1;
         public string CatCount { get; set; }
 
         public int GetCategory()
