@@ -8,17 +8,19 @@
         <h2>
             Список книг 1 категории:
         </h2>
-            <div style="padding-left: 65%">
-                <button class="btn btn-cta-secondary" asp-controller="library" asp-action="Create">Добавить новую книгу</button>
-            </div>
+        <div style="padding-left: 65%">
+            <button class="btn btn-cta-secondary" asp-controller="library" asp-action="Create">Добавить новую книгу</button>
+        </div>
 
-            <h4 style="color: #122b40; padding-right: 65%">
-                <img src="/css/noun-sort-1590833.png" class="images" alt="Сортировать">
-                Количество книг: @Model.count.CatCount
+        <h4 style="color: #122b40; padding-right: 65%">
+            <img src="/css/noun-sort-1590833.png" class="images" alt="Сортировать">
+            Количество книг: @Model.Count.CatCount
 
-            </h4>
+        </h4>
 
-            @foreach (var obj in @Model.books)
+        @foreach (var obj in @Model.Books)
+        {
+            if (@obj.Category == @Model.Category.Category)
             {
                 <div class="box">
                     <h3> @obj.Name</h3>
@@ -26,8 +28,9 @@
                     <a class="btn btn-cta-secondary" style="float: right" asp-controller="library" asp-action="Edit" asp-route-id=@obj.Count>Изменить</a>
                     <h6> @obj.Author</h6>
                 </div>
-                <br>
+            <br>
             }
+        }
     </div>
 </form>
 

@@ -4,8 +4,16 @@ namespace web.Models
 {
     public class CountBook
     {
+        public int Category { get; set; }
         public string CatCount { get; set; }
-        public CountBook GetCountName()
+
+        public int GetCategory()
+        {
+            Category = 1;
+            return Category;
+        }
+
+        public CountBook GetCount()
         {
             string connectionString = "Data Source = DESKTOP-HQF96MO\\SQLEXPRESS; Initial Catalog = master; Integrated Security=True; TrustServerCertificate=True";
             SqlConnection sqlConnection = new(connectionString);
@@ -13,7 +21,7 @@ namespace web.Models
 
             string CategoryCount = "SELECT Count(BOOK.COUNT) AS [BOOKCOUNT] " +
                 "FROM BOOK GROUP BY BOOK.CATEGORY " +
-                "HAVING(BOOK.CATEGORY = 1)";
+                "HAVING(BOOK.CATEGORY = " + Category + ")";
 
             SqlCommand cmd = new(CategoryCount, sqlConnection);
 

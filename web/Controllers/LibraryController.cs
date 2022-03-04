@@ -22,16 +22,23 @@ namespace web.Controllers
 
         private CountBook GetCount()
         {
-            CountBook count = new();
-            CountBook catcount = count.GetCountName();
-            return catcount;
+            CountBook Count = new();
+            CountBook Catcount = Count.GetCount();
+            return Catcount;
+        }
+        private int GetCategory()
+        {
+            CountBook Cat = new();
+            int Category = Cat.GetCategory();
+            return Category;
         }
 
         public IActionResult Index()
         {
             dynamic mymodel = new ExpandoObject();
-            mymodel.books = GetBook();
-            mymodel.count = GetCount();
+            mymodel.Books = GetBook();
+            mymodel.Count = GetCount();
+            mymodel.Category = GetCategory();
             return View(mymodel);
         }
 
