@@ -20,6 +20,8 @@
 
         @foreach (var obj in @Model.Books)
         {
+            if (@obj.Category == @Model.Category.Category)
+            {
                 <div class="box">
                     <h3> @obj.Name</h3>
                     <a class="btn btn-cta-secondary" style="float: right" asp-controller="library" asp-action="Delete" asp-route-id=@obj.Count>Удалить</a>
@@ -28,6 +30,7 @@
                 </div>
             <br> 
             }
+        }
     </div>
 </form>
 
