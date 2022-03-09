@@ -14,8 +14,16 @@ h1, h2, h3, h4, h5 {
 
 h6 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
+    font-weight: 200;
     color: #074f66;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
 }
 
 a:hover {
@@ -27,6 +35,15 @@ a.btn-cta-primary,
 .btn-cta-primary {
     background: #074f66;
     border: 2px solid #074f66;
+    color: #fff;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+a.btn-cta-danger,
+.btn-cta-dander {
+    background: #c9302c;
+    border: 2px solid #c9302c;
     color: #fff;
     font-weight: 600;
     text-transform: uppercase;
@@ -105,10 +122,21 @@ a.btn-cta-secondary,
 .box {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
     width: 80%;
-    height: 75px;
+    height: 65px;
     margin-left: auto;
     margin-right: auto;
-    line-height: 90px;
+    line-height: 50px;
+    background: white;
+    border-radius: 5px;
+}
+
+.boox {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
+    width: 80%;
+    height: 370px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 50px;
     background: white;
     border-radius: 5px;
 }

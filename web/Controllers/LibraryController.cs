@@ -14,23 +14,20 @@ namespace web.Controllers
             _db = db;
         }
 
-        private IEnumerable<Book> GetBook()
+        [HttpGet]
+
+        public IEnumerable<Book> GetBook()
         {
-            IEnumerable<Book> books = _db.Book;
-            return books;
+            var books = from b in _db.Book.Where(b => b.Category == 1)
+                         select b;
+            return books.ToList();
         }
 
-        private CountBook GetCount()
+        private int GetCount()
         {
-            CountBook Count = new();
-            CountBook Catcount = Count.GetCount();
-            return Catcount;
-        }
-        private int GetCategory()
-        {
-            CountBook Cat = new();
-            int Category = Cat.GetCategory();
-            return Category;
+            var bookcount = (from c in _db.Book.Where(c => c.Category == 1)
+                            select c).Count();
+            return bookcount;
         }
 
         public IActionResult Index()
@@ -38,7 +35,6 @@ namespace web.Controllers
             dynamic mymodel = new ExpandoObject();
             mymodel.Books = GetBook();
             mymodel.Count = GetCount();
-            mymodel.Category = GetCategory();
             return View(mymodel);
         }
 
