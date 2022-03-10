@@ -90,7 +90,7 @@ namespace web.Controllers
             return View(obj);
         }
 
-        //get
+        [HttpGet]
         public IActionResult Delete(int? id)
         {
             if (id == null | id == 0) { return NotFound(); }
