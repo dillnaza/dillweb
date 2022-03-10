@@ -1,8 +1,4 @@
-﻿@model dynamic
-@{
-    ViewData["Title"] = "Категории";
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -32,11 +28,11 @@
     <form id="promo" class="promo section offset-header" method="get">
         <div class="container text-center">
             <div class="btn">
-                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" value=@ViewBag.1>1-категория</button>
-                <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index" value=@ViewBag.2>2-категория</button>
-                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" value=@ViewBag.3>3-категория</button>
-                <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index" value=@ViewBag.4>4-категория</button>
-                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" value=@ViewBag.5>5-категория</button>
+                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" asp-page-handler="On1Click">1-категория</button>
+                <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index" asp-page-handler="On2Click">2-категория</button>
+                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" asp-page-handler="On3Click">3-категория</button>
+                <button class="btn btn-cta-primary" asp-controller="Library" asp-action="Index" asp-page-handler="On4Click">4-категория</button>
+                <button class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" asp-page-handler="On5Click">5-категория</button>
             </div>
         </div>
     </form>

@@ -2,31 +2,39 @@
 using System.Dynamic;
 using web.db;
 using web.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace web.Controllers
 {
     public class libraryController : Controller
     {
         private readonly Database _db;
+        public int cat = 1;
 
         public libraryController(Database db)
         {
             _db = db;
         }
 
-        [HttpGet]
+        public int On1Click() { cat = 1; return cat; }
+        public int tOn2Click() { cat = 2; return cat; }
+        public int On3Click() { cat = 3; return cat; }
+        public int On4Click() { cat = 4; return cat; }
+        public int On5Click() { cat = 5; return cat; }
 
+
+        [HttpGet]
         public IEnumerable<Book> GetBook()
         {
-            var books = from b in _db.Book.Where(b => b.Category == 1)
-                         select b;
+            var books = from b in _db.Book.Where(b => b.Category == cat)
+                        select b;
             return books.ToList();
         }
 
         private int GetCount()
         {
-            var bookcount = (from c in _db.Book.Where(c => c.Category == 1)
-                            select c).Count();
+            var bookcount = (from c in _db.Book.Where(c => c.Category == cat)
+                             select c).Count();
             return bookcount;
         }
 
@@ -38,7 +46,7 @@ namespace web.Controllers
             return View(mymodel);
         }
 
-        //get
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
@@ -58,7 +66,7 @@ namespace web.Controllers
             return View(obj);
         }
 
-        //get
+        [HttpGet]
         public IActionResult Edit(int? id)
         {
             if (id == null | id == 0) { return NotFound(); }
