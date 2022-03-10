@@ -16,14 +16,6 @@ namespace web.Controllers
             _db = db;
         }
 
-        public int On1Click() { cat = 1; return cat; }
-        public int tOn2Click() { cat = 2; return cat; }
-        public int On3Click() { cat = 3; return cat; }
-        public int On4Click() { cat = 4; return cat; }
-        public int On5Click() { cat = 5; return cat; }
-
-
-        [HttpGet]
         public IEnumerable<Book> GetBook()
         {
             var books = from b in _db.Book.Where(b => b.Category == cat)
@@ -38,7 +30,13 @@ namespace web.Controllers
             return bookcount;
         }
 
-        public IActionResult Index()
+        public int On1Click() { cat = 1; return cat; }
+        public int tOn2Click() { cat = 2; return cat; }
+        public int On3Click() { cat = 3; return cat; }
+        public int On4Click() { cat = 4; return cat; }
+        public int On5Click() { cat = 5; return cat; }
+
+        public IActionResult Index(int cat)
         {
             dynamic mymodel = new ExpandoObject();
             mymodel.Books = GetBook();
@@ -90,7 +88,7 @@ namespace web.Controllers
             return View(obj);
         }
 
-        //get
+        [HttpGet]
         public IActionResult Delete(int? id)
         {
             if (id == null | id == 0) { return NotFound(); }
