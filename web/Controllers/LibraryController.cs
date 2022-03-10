@@ -15,7 +15,7 @@ namespace web.Controllers
         {
             _db = db;
         }
-
+        //get variable from layout to here 
         public int On1Click() { cat = 1; return cat; }
         public int On2Click() { cat = 2; return cat; }
         public int On3Click() { cat = 3; return cat; }
