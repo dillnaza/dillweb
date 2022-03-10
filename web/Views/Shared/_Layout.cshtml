@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model dynamic
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,16 +25,14 @@
         </div>
     </header>
 
-    <script>
-    </script>
     <form id="promo" class="promo section offset-header" method="get">
         <div class="container text-center">
             <div class="btn">
-                <button type=submit class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" name=1>1-категория</button>
-                <button type=submit class="btn btn-cta-primary" asp-controller="Library" asp-action="Index" name=2>2-категория</button>
-                <button type=submit class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" name=3>3-категория</button>
-                <button type=submit class="btn btn-cta-primary" asp-controller="Library" asp-action="Index" name=4>4-категория</button>
-                <button type=submit class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index" name=5>5-категория</button>
+                <button type=submit class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">1-категория</button>
+                <button type=submit class="btn btn-cta-primary" asp-controller="Library" asp-action="Index">2-категория</button>
+                <button type=submit class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">3-категория</button>
+                <button type=submit class="btn btn-cta-primary" asp-controller="Library" asp-action="Index">4-категория</button>
+                <button type=submit class="btn btn-cta-secondary" asp-controller="Library" asp-action="Index">5-категория</button>
             </div>
         </div>
     </form>

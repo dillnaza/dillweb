@@ -9,11 +9,11 @@
         <h5>Добавить книгу</h5>
     </div>
     <br /><br />
-    <div class="boox">
-        <h5>
+    <div class="boox" >
+        <h5 style="margin-left:50px; margin-right:50px">
             <br />
             <label asp-for="Name"></label>
-            <input asp-for="Name" class="form-control" />
+            <input asp-for="Name" class="form-control"/>
             <span asp-validation-for="Name" class="text-danger"></span>
             <br />
             <label asp-for="Author"></label>
@@ -24,8 +24,10 @@
             <input asp-for="Category" class="form-control" />
             <span asp-validation-for="Category" class="text-danger"></span>
         </h5>
+        <div align="center">
         <button type="submit" class="btn btn-cta-primary">Добавить</button>
         <button class="btn btn-cta-secondary" asp-controller="library" asp-action="Index">Отмена</button>
+        </div>
     </div>
 </form>
 

@@ -10,7 +10,7 @@
     </div>
     <br /><br />
     <div class="boox">
-        <h4>
+        <h4 style="margin-left:50px; margin-right:50px">
             <br />
             <label asp-for="Name"></label>
             <input asp-for="Name" disabled class="form-control" />
@@ -21,8 +21,10 @@
             <label asp-for="Category"></label>
             <input asp-for="Category" disabled class="form-control" />
         </h4>
+        <div align="center">
         <button type="submit" class="btn btn-cta-dander">Удалить</button>
         <button class="btn btn-cta-secondary" asp-controller="library" asp-action="Index">Отмена</button>
+        </div>
     </div>
 </form>
 
