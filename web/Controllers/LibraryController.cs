@@ -8,8 +8,7 @@ namespace web.Controllers
 {
     public class LibraryController : Controller
     {
-        private readonly Database _db;
-        public int cat = 1; //button values instead of 1
+        private readonly Database _db
 
         public LibraryController(Database db)
         {
