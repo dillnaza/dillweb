@@ -8,7 +8,7 @@ namespace web.Controllers
 {
     public class LibraryController : Controller
     {
-        private readonly Database _db
+        private readonly Database _db;
 
         public LibraryController(Database db)
         {
@@ -17,25 +17,26 @@ namespace web.Controllers
 
         [HttpPost]
 
-        public IEnumerable<Book> GetBook()
+        public IEnumerable<Book> GetBook(int cat)
         {
             var books = from b in _db.Book.Where(b => b.Category == cat)
                         select b;
             return books.ToList();
         }
 
-        private int GetCount()
+        private int GetCount(int cat)
         {
             var bookcount = (from c in _db.Book.Where(c => c.Category == cat) 
                              select c).Count();
             return bookcount;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int cat)
         {
             dynamic mymodel = new ExpandoObject();
-            mymodel.Books = GetBook();
-            mymodel.Count = GetCount();
+            mymodel.Books = GetBook(cat);
+            mymodel.Count = GetCount(cat);
+            mymodel.Cat = cat;
             return View(mymodel);
         }
 
