@@ -6,21 +6,17 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace web.Controllers
 {
-    public class libraryController : Controller
+    public class LibraryController : Controller
     {
         private readonly Database _db;
-        public int cat = 1;
+        public int cat = 1; //button values instead of 1
 
-        public libraryController(Database db)
+        public LibraryController(Database db)
         {
             _db = db;
         }
-        //get variable from layout to here 
-        public int On1Click() { cat = 1; return cat; }
-        public int On2Click() { cat = 2; return cat; }
-        public int On3Click() { cat = 3; return cat; }
-        public int On4Click() { cat = 4; return cat; }
-        public int On5Click() { cat = 5; return cat; }
+
+        [HttpPost]
 
         public IEnumerable<Book> GetBook()
         {
@@ -31,16 +27,15 @@ namespace web.Controllers
 
         private int GetCount()
         {
-            var bookcount = (from c in _db.Book.Where(c => c.Category == cat)
+            var bookcount = (from c in _db.Book.Where(c => c.Category == cat) 
                              select c).Count();
             return bookcount;
         }
 
-        public IActionResult Index(int cat)
+        public IActionResult Index()
         {
             dynamic mymodel = new ExpandoObject();
             mymodel.Books = GetBook();
-            mymodel.Cat = cat;
             mymodel.Count = GetCount();
             return View(mymodel);
         }
