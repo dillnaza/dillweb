@@ -26,7 +26,7 @@ namespace web.Controllers
 
         private int GetCount(int cat)
         {
-            var bookcount = (from c in _db.Book.Where(c => c.Category == cat) 
+            var bookcount = (from c in _db.Book.Where(c => c.Category == cat)
                              select c).Count();
             return bookcount;
         }
