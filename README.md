@@ -42,4 +42,4 @@
 ## Контакты
 
 - gmail: dilnazbaidakhanova@gmail.com
-- telegram: @dillnazzza**
+- telegram: @dillnazzza
