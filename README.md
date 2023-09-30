@@ -41,5 +41,5 @@
 
 ## Контакты
 
-# gmail: dilnazbaidakhanova@gmail.com
-# telegram: @dillnazzza
+** gmail: dilnazbaidakhanova@gmail.com**
+** telegram: @dillnazzza**
